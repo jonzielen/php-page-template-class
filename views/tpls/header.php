@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{title} <?php echo ((BASE_URL == 'http://test.dev/page-template/') ? '' : $defaultSite['title'] ); ?></title>
+  <title>{title} <?php echo $defaultSite['title']; ?></title>
+  <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>css/main.css">
   <?php
     if (isset($defaultSite['meta'])) {
       function setMeta($key, $value) {
@@ -18,7 +19,7 @@
   ?>
   <link href="https://plus.google.com/{plusPageUrl}" rel="publisher" />
 </head>
-<body>
+<body class="{bodyClass}">
   <h1>{h1}</h1>
   <h2>{h2}</h2>
   <h3>{h3}</h3>

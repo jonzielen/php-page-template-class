@@ -1,3 +1,9 @@
+body {
+  background-color:#ccc;
+  padding:0;
+  margin:0;
+}
+
 .login {
 
 }
@@ -16,6 +22,7 @@
   float:left;
   width:200px;
 }
+
 
 #login-form button {
   float:right;

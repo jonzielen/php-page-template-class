@@ -37,6 +37,10 @@ class Page {
     }
   }
 
+  public function removeUnusedSettings() {
+    $this->template = preg_replace('^{.*}^', '', $this->template);
+  }
+
   public function displayPage($file  = 'models/defaultPageInfo.php') {
     if (isset($file) && file_exists($file)) {
       require_once($file);
@@ -44,6 +48,7 @@ class Page {
       foreach($pageSettings as $pageKey => $pageValue) {
         $this->template = str_replace("{".$pageKey."}", $pageValue, $this->template);
       }
+      self::removeUnusedSettings();
       return eval("?>$this->template");
     } else {
       require_once($this->rootPath.$file);
@@ -52,6 +57,7 @@ class Page {
         $this->template = str_replace("{".$pageKey."}", $pageValue, $this->template);
       }
       $this->template .= file_get_contents($this->rootPath.$file);
+      self::removeUnusedSettings();
       return eval("?>$this->template");
     }
   }
