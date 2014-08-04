@@ -1,0 +1,23 @@
+.login {
+
+}
+
+#login-form {
+  width:200px;
+  margin:0 auto;
+}
+
+#login-form label {
+  float:left;
+  width:200px;
+}
+
+#login-form input {
+  float:left;
+  width:200px;
+}
+
+#login-form button {
+  float:right;
+  margin:0;
+}
